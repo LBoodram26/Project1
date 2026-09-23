@@ -1,0 +1,46 @@
+---
+title: "Project 1 Approach – Chess Tournament Data"
+author: "Lakeranie Boodram"
+date: "2026-09-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Approach
+
+In Project 1, I will use the tournamentinfo.txt file that has been provided, which has chess tournament results presented in a semi-structured text format. The aim of the project is to convert the text file into a clean dataset that can be used for export in CSV format.
+I will start by importing the text file into R and analyzing the technique in which the data is presented in the tournament. The data for each player includes the player's name, state, total points, rating before the tournament, and results of rounds.
+
+I will then extract the information needed for each player:
+
+- Player name
+- State
+- Total number of points
+- Pre-tournament rating
+- Opponent numbers from each round
+
+The results information will also have to be processed. For instance, the record W 39 tells us that the player scored a victory against opponent #39. Once again, the letter W, L, or D conveys a conclusion of the game, while the number identifies the opponent. I will extract the information about the opponent in order to obtain this opponent’s rating prior to the tournament.
+
+After the player and opponent information has been cleaned, I will create a lookup between each player number and their pre-tournament rating. I will use the opponent numbers from each round to retrieve the ratings of the opponents each player faced.
+
+Then, I will find the average pre-tournament rating of the players' opponents similar to the first stage. Road of a player where he/she faced no opponents is excluded from the average.
+The final dataset will have five columns:
+
+
+Each player’s name, state, total points, pre-rating, and average opponent pre-rating.
+Lastly, I will download the cleaned dataset in a CSV format. The R code, explanations, and results will be contained in an R Markdown or Quarto document and the finished project will be uploaded to GitHub and published as required by the assignment.
+
+## Resources I plan to use
+
+- The provided tournamentinfo.txt tournament data
+- The Project 1 assignment instructions
+- The professor’s video explaining how to read the chess tournament cross-table
+- R documentation for text processing, regular expressions, data frames, and calculating averages
+
+
+
+
